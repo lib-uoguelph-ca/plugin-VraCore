@@ -12,7 +12,7 @@
             });
         });
 
-        $('div#vra-core-metadata').on('keydown click', 'div.vra-element-header, div.vra-attributes-header', function(e) {
+        $('div#vra-core-metadata').bind('keydown click', 'div.vra-element-header, div.vra-attributes-header', function(e) {
             if(e.type == "click" || e.keyCode == 13) {
                 e.stopPropagation();
                 var drawerContainer = $(this);
@@ -21,7 +21,7 @@
             }
         });
 
-        $('div.vra-data').on('click', "input.element-add", function(e) {
+        $('div.vra-data').bind('click', "input.element-add", function(e) {
             e.preventDefault();
             e.stopPropagation();
             var addButton = $(this);
@@ -41,7 +41,7 @@
             });
         });
 
-        $('div.vra-data').on('click', "input.subelement-add", function(e) {
+        $('div.vra-data').bind('click', "input.subelement-add", function(e) {
             e.preventDefault();
             e.stopPropagation();
             var addButton = $(this);
@@ -68,7 +68,7 @@
             });
         });
 
-        $('div.vra-data').on('click', "input.parent-element-add", function(e) {
+        $('div.vra-data').bind('click', "input.parent-element-add", function(e) {
             e.preventDefault();
             e.stopPropagation();
             var addButton = $(this);
@@ -88,7 +88,7 @@
         });
 
         //mark changed display elements so @dataDate can be updated
-        $('#vra-core-metadata').on('keypress', 'div.input textarea', function(e) {
+        $('#vra-core-metadata').bind('keypress', 'div.input textarea', function(e) {
             var target = $(this);
             if (! target.data('changed')) {
                 var field = target.parents('.field');
